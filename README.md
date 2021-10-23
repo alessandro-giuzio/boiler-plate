@@ -1,5 +1,5 @@
-# Boiler-plate
-CSS3 Boiler Plate - Work In Progress
+# CSS3 Modern Reset
+ Work In Progress
 
 
 
