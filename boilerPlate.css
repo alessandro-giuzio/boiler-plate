@@ -23,7 +23,11 @@
   --box-shadow: 0 0.25em 1.5em rgba(0, 0, 0, 0.15);
 }
 
-/* reset */
+/* --------------------- */
+/* Reset                 */
+/* -------------------- */
+
+/* Box Sizing */
 
 *,
 *::before,
@@ -42,6 +46,9 @@ h4,
   line-height: 1.1;
 }
 
+
+/* Reset Margins */
+
 body,
 h1,
 h2,
@@ -57,19 +64,86 @@ ol[class] {
   padding: 0;
 }
 
+/* Make forms easier to work with */
+
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* remove animation for people who've turned them off */
+
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+
+/* Images */
+
 img {
   max-width: 100%;
   height: auto;
   display: block;
 }
 
-/* Utility classes */
+/* --------------------- */
+/* Utility classes       */
+/* -------------------- */
+
+.flex {
+  display: flex;
+  gap: var(--gap, 1rem);
+}
+
+.grid {
+  display: grid;
+  gap: var(--gap, 1rem);
+}
+
+.flow > *:where(:not(:first-child)) {
+  margin-top: var(--flow-space, 1rem);
+}
+
+.container {
+  padding-inline: 2em;
+  max-width: 80rem;
+  margin-inline: auto;
+}
+
+.grid-container {
+  display: grid;
+}
+
 
 /* general styling */
 
 body {
   line-height: 1.6;
+  min-height: 100vh;
 }
+
+
+/* general layout */
+
+
+@media (min-width: 40rem) {
+  .split {
+    flex-direction: row;
+  }
+}
+
+/* Components */
 
 .btn {
   display: inline-block;
@@ -82,22 +156,6 @@ body {
   padding: 0.75em 1.5em;
   background-color: var(--clr-accent-400);
   color: var(--clr-neutral-900);
-}
-/* general layout */
-
-.flow-content > * + * {
-  margin-top: var(--flow-spacer, 1em);
-}
-
-.split {
-  display: flex;
-  flex-direction: column;
-}
-
-@media (min-width: 40rem) {
-  .split {
-    flex-direction: row;
-  }
 }
 
 /* individual sections */
