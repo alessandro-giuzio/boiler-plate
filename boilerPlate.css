@@ -36,7 +36,7 @@
 }
 
 /*
- Create a root stacking context
+Create a root stacking context
 */
 #root,
 #__next {
@@ -64,20 +64,29 @@ h6 {
   overflow-wrap: break-word;
 }
 
-/* Reset Margins */
-
+/* Remove default margin */
 body,
 h1,
 h2,
 h3,
-p {
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
   margin: 0;
 }
 
-ul[class],
-ol[class] {
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
   list-style: none;
-  padding: 0;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
 }
 
 /* Make forms easier to work with */
@@ -114,6 +123,14 @@ svg {
   display: block;
 }
 
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
 /* --------------------- */
 /* Utility classes       */
 /* -------------------- */
@@ -148,10 +165,12 @@ html,
 body {
   height: 100%;
 }
+/* Set core body defaults */
 body {
-  line-height: 1.6;
+  line-height: 1.5;
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeSpeed;
 }
 
 /* general layout */
