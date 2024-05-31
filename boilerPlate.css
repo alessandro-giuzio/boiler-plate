@@ -64,6 +64,28 @@ h6 {
   overflow-wrap: break-word;
 }
 
+/* Ensure headings and block elements have balanced line lengths for better readability */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+dt,
+blockquote,
+figcaption {
+  text-wrap: balance;
+  max-inline-size: 25ch;
+}
+
+/* Allow paragraphs and list items to have aesthetically pleasing line breaks */
+p,
+dd,
+li {
+  text-wrap: pretty;
+  max-inline-size: 60ch;
+}
+
 /* Remove default margin */
 body,
 h1,
