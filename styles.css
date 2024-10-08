@@ -1,21 +1,34 @@
 /* Reset some default styles   */
-* {
-  margin: 0;
-  padding: 0;
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
-/* Apply a simple font to the entire page*/
-body {
-  font-family: 'Arial', sans-serif;
+
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
 }
-/* Add subtle background color and center content*/
-html,
 body {
-  heught: 100%;
-  background-color: #f0f0f0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  margin: 0;
+}
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin-block-end: 0;
+}
+/*  */
+:where(ul, ol):where([class]) {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 /* Style links*/
 a {
